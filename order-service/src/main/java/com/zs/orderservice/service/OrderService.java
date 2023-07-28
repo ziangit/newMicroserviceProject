@@ -52,7 +52,7 @@ public class OrderService {
 
         if(allProductsInStock){
             orderRepository.save(order);
-            return "Order Placed Successfully";
+            return "Order Placed Successfully (circuit breaker)";
         } else {
             throw new IllegalArgumentException("Product is not in stock, please try again later");
         }
